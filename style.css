@@ -38,7 +38,7 @@ footer {
     text-shadow: 0 2px 3px black;
 }
 
-@media (max-width: 763px) {
+@media (max-width: 763px) {    
     .kartu {
         width: 50%;
         height: 85%;
