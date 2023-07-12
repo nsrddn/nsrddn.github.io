@@ -74,6 +74,10 @@ footer {
         display: block;
     }
 
+    .footer-bottom .sosmed code {
+        display: none;
+    }
+    
     .text {
         width: 50%;
         height: 85%;
