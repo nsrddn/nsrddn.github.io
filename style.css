@@ -1,3 +1,9 @@
+.nav-b {
+    top: 0; 
+    position: fixed;
+    width: 100%;
+}
+
 .latar {
     height: 100vh;
     width: 40%;
@@ -34,14 +40,38 @@ footer {
     width: 100%;
 }
 
+.footer-bottom {
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    height: 60px;
+}
+
 .icon {
     text-shadow: 0 2px 3px black;
+}
+
+.menu-nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.garis {
+    border-bottom: 3px solid lightblue;
+    width: 40px;
+    margin: 20px auto;
 }
 
 @media (max-width: 763px) {    
     .kartu {
         width: 50%;
         height: 85%;
+    }
+
+    .menu-nav {
+        display: block;
     }
 
     .text {
