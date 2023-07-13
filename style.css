@@ -45,6 +45,7 @@ footer {
     width: 100%;
     position: fixed;
     background-color: white;
+    box-shadow: 0 -1px 20px -5px gray;
 }
 
 .icon {
@@ -62,6 +63,7 @@ footer {
     width: 40px;
     margin: 20px auto;
 }
+
 
 @media (max-width: 763px) {    
     .kartu {
@@ -83,6 +85,10 @@ footer {
         overflow: auto;
     }
 
+    .icon img {
+        width: 20px;
+    }
+    
     img {
         width: 150px;
     }
