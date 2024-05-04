@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'Poppins';
-    src: url(../fonts/Poppins/Poppins-Black.ttf);
+    src: url(../fonts/Poppins/Poppins-Regular.ttf);
 }
 
 #card-x {
@@ -37,11 +37,14 @@
 }
 
 .kartu {
-    height: 75%;    
+    height: 75%; 
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .3) !important;   
 }
 
 .text {
     height: 75%;
+    overflow: auto;
+    font-size: small;
 }
 
 footer {
