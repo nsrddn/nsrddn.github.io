@@ -38,7 +38,17 @@
 
 .kartu {
     height: 75%; 
-    box-shadow: 0 2px 12px rgba(0, 0, 0, .3) !important;   
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .3) !important; 
+}
+
+.img-project {
+    width: 400px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.img-project:hover {
+    filter: brightness(.8);
 }
 
 .text {
