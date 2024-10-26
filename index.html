@@ -1,123 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-		/>
-		<link rel="stylesheet" href="css/style.css" />
-		<title>Portofolio</title>
-	</head>
-	<body>
-		<div class="d-flex">
-			<div class="bg-primary latar"></div>
-			<div class="bg-white putih"></div>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<title>NASARUDDIN - JUNIOR WEB DEVELOPER</title>
+</head>
+
+<body class="h-screen poppins">
+	<nav class="w-full h-16 bg-gray-800 fixed z-20 top-0 shadow-md text-sm flex justify-center items-center">
+		<ul class="flex text-gray-400 justify-center items-center gap-8">
+			<li class="hover:underline cursor-pointer"><a href="#home">HOME</a></li>
+			<li class="hover:underline cursor-pointer"><a href="#skill">KNOWLEDGE</a></li>
+			<li class="hover:underline cursor-pointer"><a href="#portofolio">PORTOFOLIO</a></li>
+			<li class="hover:underline cursor-pointer"><a href="#contact">CONTACT</a></li>
+		</ul>
+	</nav>
+	<main id="home" class="flex bg-gray-800 relative h-full items-center justify-center w-full">
+		<div class="top-4 flex-col flex justify-center absolute bottom-0 z-10">
+			<h2 class="text-8xl text-gray-300 font-bold">NASARUDDIN</h2>
+			<p id="who" class="text-xl text-blue-700 font-bold w-max">
+				<span class="key-animation block pr-5">
+					I'M WEB DEVELOPER
+				</span>
+			</p>
+			<ul class="flex items-center text-sm text-gray-400 gap-4 font-light mt-8">
+				<li class="hover:underline"><a href="" class="flex items-center gap-2"><img src="svg/github-logo.svg"
+							alt="">GitHub</a></li>
+				<li class="hover:underline"><a href="" class="flex items-center gap-2"><img src="svg/instagram-logo.svg"
+							alt="">Instagram</a></li>
+				<li class="hover:underline"><a href="" class="flex items-center gap-2"><img src="svg/facebook-logo.svg"
+							alt="">Facebook</a></li>
+			</ul>
 		</div>
-		<div class="kartu-container row align-items-center justify-content-center">
-			<nav class="navbar navbar-expand-lg nav-b bg-body-tertiary shadow">
-				<div class="container-fluid">
-					<a class="navbar-brand d-flex align-items-center gap-2" href="#"
-						><div
-							class="rounded-0 bg-primary"
-							style="width: 15px; height: 15px"
-						></div>
-						<span class="display-6 fw-bold fs-3">Nasaruddin</span
-						><span class="text-secondary lead"> / Portofolio</span></a
-					>
-					<button
-						class="navbar-toggler"
-						type="button"
-						data-bs-toggle="collapse"
-						data-bs-target="#navbarNav"
-						aria-controls="navbarNav"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
-					>
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse menu-nav navbar-collapse" id="navbarNav">
-						<ul class="navbar-nav">
-							<li class="nav-item border-end">
-								<a class="nav-link text-info" href="/">ABOUT ME</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link text-secondary" href="project.html"
-									>PROJECT</a
-								>
-							</li>
-						</ul>
-					</div>
+		<img src="img/myProfile.png" class="fixed opacity-40 drop-shadow-white bottom-0" alt="">
+	</main>
+	<main id="skill"
+		class="flex bg-img gradate bg-gray-800 relative h-full items-center z-10 justify-center w-full">
+		<div class="flex-col flex w-full items-center justify-center gap-4 z-10">
+			<h2 class="text-5xl text-white font-bold scroll-animation">JUNIOR <span class="text-blue-500">WEB DEVELOPER</span></h2>
+			<p class="text-2xl text-gray-500 font-light scroll-animation">MY KNOWLEDGE IN WEB PROGRAMMING</p>
+			<div class="flex mt-12 flex-col scroll-animation gap-4 w-1/2 justify-center">
+				<div class="flex justify-start items-center w-full gap-3">
+					<span class="text-sm block w-1/6 text-end text-gray-400">HTML</span>
+					<p class="h-4 w-3/4 width-scroll-animation rounded-sm bg-green-500"></p>
+					<span class="text-gray-400">75%</span>
 				</div>
-			</nav>
-			<div class="bg-primary col-md-3 mt-2 kartu shadow-lg text-center">
-				<img
-					src="img/profile.png"
-					class="img-thumbnail mt-4 rounded-circle"
-					width="200"
-					alt=""
-				/>
-				<h1 class="display-6 my-2 fw-bold">Nasaruddin</h1>
-				<div class="garis"></div>
-				<code class="text-primary icon"
-					>Javascript, PHP, ReactJS, Laravel, NodeJS</code
-				>
-				<footer>
-					<a href="https://instagram.com/reb_0t" class="text-primary icon">
-						<i class="bi fs-3 bi-instagram"></i>
-					</a>
-					<a href="https://twitter.com/nsr_ddn" class="text-primary icon">
-						<i class="bi fs-3 bi-twitter"></i>
-					</a>
-					<a
-						href="https://facebook.com/nsrddn.nsrddn"
-						class="text-primary icon"
-					>
-						<i class="bi fs-3 bi-facebook"></i>
-					</a>
-					<a href="" class="text-primary icon">
-						<i class="bi fs-3 bi-linkedin"></i>
-					</a>
-				</footer>
-			</div>
-			<div class="text mt-2 col-md-4" id="card-x">
-				<h1 class="display-1 pt-2 fw-bold">
-					Hi<span class="text-primary">!</span>
-				</h1>
-				<p class="lead fw-bold">Here's who iam & what i do</p>
-				<div class="d-flex gap-2 w-50 my-4">
-					<button class="btn btn-primary w-100">NEXT</button>
-					<a href="project.html" class="btn w-100 border"
-						>PROJECT</a
-					>
+				<div class="flex justify-start items-center w-full gap-3">
+					<span class="text-sm block w-1/6 text-end text-gray-400">CSS</span>
+					<p class="h-4 w-2/5 width-scroll-animation rounded-sm bg-green-500"></p>
+					<span class="text-gray-400">40%</span>
 				</div>
-				<p>
-					Selamat datang di portofolio saya! Saya Nasaruddin, seorang web developer dengan pengalaman dalam merancang dan mengembangkan berbagai jenis aplikasi web. Portofolio ini mencerminkan dedikasi saya dalam menciptakan solusi web yang inovatif dan fungsional. Dari proyek-proyek yang saya bagikan di sini, Anda akan melihat kemampuan saya dalam menggunakan berbagai teknologi seperti HTML, CSS, JavaScript, dan framework seperti ReactJS dan Laravel. Saya selalu bersemangat untuk belajar hal baru dan menerapkannya dalam proyek-proyek saya, dan saya yakin bahwa kolaborasi saya dengan Anda dapat membawa nilai tambah yang signifikan.
-				</p>
-				<p>
-					Terima kasih telah meluangkan waktu untuk melihat portofolio saya. Saya berharap portofolio ini memberikan gambaran yang jelas tentang keterampilan dan dedikasi saya dalam dunia pengembangan web. Jika Anda tertarik untuk bekerja sama atau ingin berdiskusi lebih lanjut tentang proyek-proyek potensial, saya akan senang mendengarnya. Jangan ragu untuk menghubungi saya melalui informasi kontak yang tersedia.
-				</p>
+				<div class="flex justify-start items-center w-full gap-3">
+					<span class="text-sm block w-1/6 text-end text-gray-400">Javascript</span>
+					<p class="h-4 w-1/2 width-scroll-animation rounded-sm bg-green-500"></p>
+					<span class="text-gray-400">50%</span>
+				</div>
+				<div class="flex justify-start items-center w-full gap-3">
+					<span class="text-sm block w-1/6 text-end text-gray-400">Next JS</span>
+					<p class="h-4 w-1/3 width-scroll-animation rounded-sm bg-green-500"></p>
+					<span class="text-gray-400">33%</span>
+				</div>
+				<div class="flex justify-start items-center w-full gap-3">
+					<span class="text-sm block w-1/6 text-end text-gray-400">PHP</span>
+					<p class="h-4 w-1/2 width-scroll-animation rounded-sm bg-green-500"></p>
+					<span class="text-gray-400">50%</span>
+				</div>
+				<div class="flex justify-start items-center w-full gap-3">
+					<span class="text-sm block w-1/6 text-end text-gray-400">Laravel</span>
+					<p class="h-4 w-1/3 width-scroll-animation rounded-sm bg-green-500"></p>
+					<span class="text-gray-400">33%</span>
+				</div>
 			</div>
 		</div>
-		<div class="footer-bottom">
-			<div class="m-3 d-flex gap-3 justify-content-between align-items-center">
-				<code class="text-secondary">&copy; Nasaruddin</code>
-				<code class="text-secondary"
-					><i class="bi bi-whatsapp"></i> +62-822-28263933</code
-				>
+	</main>
+	<main id="portofolio"
+		class="flex bg-img bg-gray-800 relative h-full items-center z-10 justify-center w-full">
+		<div class="top-4 flex-col flex w-full items-center justify-center gap-4 z-10">
+			<h2 class="text-5xl text-white font-bold scroll-animation">MY <span class="text-blue-500">PORTOFOLIO</span></h2>
+			<p class="text-2xl text-gray-500 font-light scroll-animation">MY LATEST WORK</p>
+		</div>
+	</main>
+	<main id="contact"
+		class="flex bg-img gradate bg-gray-800 relative h-full items-center z-10 justify-center w-full">
+		<div class="top-4 flex w-full items-center justify-center gap-8 z-10">
+			<div class="flex flex-col justify-center items-center">
+				<h2 class="text-5xl text-white font-bold scroll-animation">CONTACT <span class="text-blue-500">ME</span></h2>
+				<p class="text-2xl text-gray-500 font-light scroll-animation">I've Been Waiting</p>
+			</div>
+			<div class="flex flex-col justify-center scroll-animation p-4 gap-3">
+				<div class="flex flex-col gap-2 justify-center">
+					<label for="" class="text-gray-300 text-sm font-extralight">Name</label>
+					<input type="text" name="" class="rounded-sm outline-none p-1" id="">
+				</div>
+				<div class="flex flex-col gap-2 justify-center">
+					<label for="" class="text-gray-300 text-sm font-extralight">Email</label>
+					<input type="email" name="" class="rounded-sm outline-none p-1" id="">
+				</div>
+				<div class="flex flex-col gap-2 justify-center">
+					<label for="" class="text-gray-300 text-sm font-extralight">Phone</label>
+					<input type="tel" name="" class="rounded-sm outline-none p-1" id="">
+				</div>
+				<div class="flex flex-col gap-2 justify-center">
+					<label for="" class="text-gray-300 text-sm font-extralight">Message</label>
+					<textarea name="" id="" class="rounded-sm outline-none p-1"></textarea>
+				</div>
+				<button class="bg-blue-500 p-2 rounded-sm text-gray-800">Send</button>
 			</div>
 		</div>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-			crossorigin="anonymous"
-		></script>
-	</body>
+	</main>
+	<footer class="text-center h-16 text-gray-300 relative text-sm bg-gray-800 font-extralight w-full flex justify-center items-center">
+		&copy; 2024 by Nasaruddin
+	</footer>
+	<script src="js/main.js"></script>
+</body>
+
 </html>

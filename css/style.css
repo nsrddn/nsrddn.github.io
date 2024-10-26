@@ -1,126 +1,108 @@
-@font-face {
-    font-family: 'inconsolata';
-    src: url(../fonts/Inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf);
+*, html {
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.poppins {
+    font-family: "Poppins";
+}
+
+.key-animation {
+    overflow: hidden;
+    animation: key-ani 2s steps(17) alternate infinite, blink .3s infinite;
+    border-right: 2px solid yellow;
+    white-space: nowrap;
+}
+
+@keyframes key-ani {
+    0% {
+        width: 0;
+        visibility: hidden;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+}
+
+.scroll-animation {
+    animation: fade-scroll both;
+    animation-timeline: view();
+    animation-range: contain 0 contain 50%;
+}
+
+.width-scroll-animation {
+    animation: width-scroll both;
+    animation-timeline: view();
+    animation-range: contain 0 contain 20%;
+}
+
+@keyframes width-scroll {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes fade-scroll {
+    from {
+        opacity: .3;
+        transform: translateY(8vh);
+    }
 }
 
 @font-face {
-    font-family: 'Poppins';
-    src: url(../fonts/Poppins/Poppins-Regular.ttf);
+    font-family: "Poppins";
+    src: url(../fonts/Poppins/Poppins-Black.ttf);
 }
 
-#card-x {
-    font-family: 'Poppins';
+.shadow-white {
+    box-shadow: 0 0 12px rgba(255, 255, 255, .3);
 }
 
-.nav-b {
-    top: 0; 
-    position: fixed;
-    width: 100%;
+.drop-shadow-white {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, .3));
 }
 
-.latar {
-    height: 100vh;
-    width: 40%;
+#skill::before {
+    background-image: url(../img/bg-web.jpg);
 }
 
-.putih {
-    height: 100vh;
-    width: 60%;
+#contact::before {
+    background-image: url(../img/contact-bg.jpg);
 }
 
-.kartu-container {
-    background-color: rgba(0, 0, 0, 0);
-    position: fixed;
+.bg-img::before {
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
     top: 0;
-    right: 0;
-    bottom: 0;
-}
-
-.kartu {
-    height: 75%; 
-    box-shadow: 0 2px 12px rgba(0, 0, 0, .3) !important; 
-}
-
-.img-project {
-    width: 400px;
-    cursor: pointer;
-    transition: all .5s ease;
-}
-
-.img-project:hover {
-    filter: brightness(.8);
-}
-
-.text {
-    height: 75%;
-    overflow: auto;
-    font-size: small;
-}
-
-.text::-webkit-scrollbar {
-    display: none;
-}
-
-footer {
-    margin-top: 15%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
     width: 100%;
+    height: 100%;
+    content: '';
+    opacity: .2;
+    background-attachment: fixed;
 }
 
-.footer-bottom {
-    bottom: 0;
+.gradate::after {
+    content: '';
+    position: absolute;
+    height: 10%;
     width: 100%;
-    position: fixed;
-    background-color: white;
-    box-shadow: 0 -1px 20px -5px gray;
+    display: block;
 }
 
-.icon {
-    text-shadow: 0 2px 3px black;
+#contact::after {
+    top: 0;
+    background: linear-gradient(180deg, rgba(31, 41, 55, 1), rgba(255, 255, 255, 0));
 }
 
-.menu-nav {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-
-.garis {
-    border-bottom: 3px solid lightblue;
-    width: 40px;
-    margin: 20px auto;
-}
-
-
-@media (max-width: 763px) {    
-    .kartu {
-        width: 50%;
-        height: 85%;
-    }
-
-    .menu-nav {
-        display: block;
-    }
-
-    .footer-bottom .sosmed code {
-        display: none;
-    }
-    
-    .text {
-        width: 50%;
-        height: 85%;
-        overflow: auto;
-    }
-
-    .icon img {
-        width: 20px;
-    }
-    
-    img {
-        width: 150px;
-    }
+#skill::after {
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(31, 41, 55, 1), rgba(255, 255, 255, 0));
 }
