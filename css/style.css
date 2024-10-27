@@ -51,7 +51,7 @@
 @keyframes fade-scroll {
     from {
         opacity: .3;
-        transform: translateY(8vh);
+        transform: translateY(5vh);
     }
 }
 
@@ -105,4 +105,18 @@
 #skill::after {
     bottom: 0;
     background: linear-gradient(0deg, rgba(31, 41, 55, 1), rgba(255, 255, 255, 0));
+}
+
+aside {
+    animation: open-aside .4s ease;
+}
+
+@keyframes open-aside {
+    from {
+        left: -100%;
+    }
+}
+
+#slideContent {
+    transition: all .8s ease;
 }
