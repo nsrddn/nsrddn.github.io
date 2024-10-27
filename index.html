@@ -124,12 +124,12 @@
 	</main>
 	<main id="contact" class="flex bg-img gradate bg-gray-800 relative h-full items-center z-10 justify-center w-full">
 		<div class="top-4 max-[768px]:flex-col flex w-full items-center justify-center gap-8 z-10">
-			<div data-aos="fade-right" data-aos-duration="2000" class="flex flex-col justify-center items-center">
+			<div data-aos="fade-down" data-aos-duration="2000" class="flex flex-col justify-center items-center">
 				<h2 class="text-5xl max-[768px]:text-xl text-white font-bold">CONTACT <span
 						class="text-blue-500">ME</span></h2>
 				<p class="text-2xl max-[768px]:text-sm text-gray-500 font-light">I've Been Waiting</p>
 			</div>
-			<div data-aos="fade-left" data-aos-duration="2000" class="flex flex-col max-[768px]:w-full justify-center p-4 gap-3">
+			<div data-aos="fade-up" data-aos-duration="2000" class="flex flex-col max-[768px]:w-full justify-center p-4 gap-3">
 				<div class="flex flex-col gap-2 justify-center">
 					<label for="" class="text-gray-300 text-sm font-extralight">Name</label>
 					<input type="text" name="" class="rounded-sm outline-none p-1" id="name">
@@ -173,10 +173,12 @@
 
 		send.addEventListener('click', function () {
 			const tel = "6282228263933";
-			const text = `Name: ${name.value}
+			const text = `
+			Name: ${name.value}
 			Email: ${email.value}
 			Phone: ${phone.value}
-			Message: ${message.value}`;
+			Message: ${message.value}
+			`;
 			window.location.href = `https://wa.me/${tel}?text=${text}`;
 		});
 
