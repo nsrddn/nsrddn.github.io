@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link rel="stylesheet" href="css/style.css">
 	<title>NASARUDDIN - PROFILE</title>
 </head>
@@ -52,12 +53,12 @@
 	</main>
 	<main id="skill" class="flex bg-img gradate bg-gray-800 relative h-full items-center z-10 justify-center w-full">
 		<div class="flex-col flex w-full items-center justify-center gap-4 z-10">
-			<h2 class="text-5xl max-[768px]:text-xl text-white font-bold scroll-animation">JUNIOR <span
+			<h2 data-aos="fade-down" data-aos-duration="2000" class="text-5xl max-[768px]:text-xl text-white font-bold">JUNIOR <span
 					class="text-blue-500">WEB DEVELOPER</span></h2>
-			<p class="text-2xl max-[768px]:text-sm text-gray-500 font-light scroll-animation">MY KNOWLEDGE IN WEB
+			<p data-aos="fade-down" data-aos-duration="2000" class="text-2xl max-[768px]:text-sm text-gray-500 font-light">MY KNOWLEDGE IN WEB
 				PROGRAMMING</p>
-			<div
-				class="flex text-sm max-[768px]:text-xs scroll-animation font-light max-[768px]:w-full max-[768px]:items-center w-1/2 justify-center text-gray-300">
+			<div data-aos="fade-up" data-aos-duration="2000"
+				class="flex text-sm max-[768px]:text-xs font-light max-[768px]:w-full max-[768px]:items-center w-1/2 justify-center text-gray-300">
 				<div class="flex flex-col w-1/6 pl-3 max-[768px]:w-1/3 items-end gap-3">
 					<span>HTML</span>
 					<span>CSS</span>
@@ -97,15 +98,15 @@
 	</main>
 	<main id="portofolio" class="flex bg-img bg-gray-800 relative h-full items-center z-10 justify-center w-full">
 		<div class="top-4 flex-col flex w-full relative items-center justify-center gap-4 z-10">
-			<h2 class="text-5xl max-[768px]:text-xl text-white font-bold scroll-animation">MY <span
+			<h2 data-aos="fade-down" data-aos-duration="2000" class="text-5xl max-[768px]:text-xl text-white font-bold">MY <span
 					class="text-blue-500">PORTOFOLIO</span></h2>
-			<p class="text-2xl max-[768px]:text-sm text-gray-500 font-light scroll-animation">MY LATEST WORK</p>
-			<div id="caret"
-				class="flex z-10 items-center absolute max-[768px]:hidden scroll-animation right-40 bottom-32 left-40 justify-between">
+			<p data-aos="fade-down" data-aos-duration="2000" class="text-2xl max-[768px]:text-sm text-gray-500 font-light">MY LATEST WORK</p>
+			<div id="caret" data-aos="fade-up" data-aos-duration="2000"
+				class="flex z-10 items-center absolute max-[768px]:hidden right-40 bottom-32 left-40 justify-between">
 				<img width="30" class="cursor-pointer hover:opacity-80" src="svg/caret-left.svg" alt="">
 				<img width="30" class="cursor-pointer hover:opacity-80" src="svg/caret-right.svg" alt="">
 			</div>
-			<div class="overflow-scroll w-full scroll-animation p-4">
+			<div data-aos="fade-up" data-aos-duration="2000" class="overflow-scroll w-full p-4">
 				<div class="flex items-center" id="slideContent">
 					<div class="min-w-full flex justify-center px-4">
 						<img src="img/kasir.png"
@@ -123,12 +124,12 @@
 	</main>
 	<main id="contact" class="flex bg-img gradate bg-gray-800 relative h-full items-center z-10 justify-center w-full">
 		<div class="top-4 max-[768px]:flex-col flex w-full items-center justify-center gap-8 z-10">
-			<div class="flex flex-col justify-center items-center">
-				<h2 class="text-5xl max-[768px]:text-xl text-white font-bold scroll-animation">CONTACT <span
+			<div data-aos="fade-right" data-aos-duration="2000" class="flex flex-col justify-center items-center">
+				<h2 class="text-5xl max-[768px]:text-xl text-white font-bold">CONTACT <span
 						class="text-blue-500">ME</span></h2>
-				<p class="text-2xl max-[768px]:text-sm text-gray-500 font-light scroll-animation">I've Been Waiting</p>
+				<p class="text-2xl max-[768px]:text-sm text-gray-500 font-light">I've Been Waiting</p>
 			</div>
-			<div class="flex flex-col max-[768px]:w-full justify-center scroll-animation p-4 gap-3">
+			<div data-aos="fade-left" data-aos-duration="2000" class="flex flex-col max-[768px]:w-full justify-center p-4 gap-3">
 				<div class="flex flex-col gap-2 justify-center">
 					<label for="" class="text-gray-300 text-sm font-extralight">Name</label>
 					<input type="text" name="" class="rounded-sm outline-none p-1" id="name">
@@ -153,7 +154,10 @@
 		class="text-center h-16 text-gray-300 relative text-sm bg-gray-800 font-extralight w-full flex justify-center items-center">
 		&copy; 2024 by Nasaruddin
 	</footer>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script>
+		AOS.init();
+
 		const bars = document.querySelector('#bars');
 		const close = document.querySelector('#close');
 		const aside = document.querySelector('aside');
@@ -161,15 +165,18 @@
 		const slideContent = document.querySelector('#slideContent');
 		const caret = document.querySelectorAll('#caret img');
 
-		const name = document.querySelector('#name').value;
-		const email = document.querySelector('#email').value;
-		const phone = document.querySelector('#phone').value;
-		const message = document.querySelector('#message').value;
+		const name = document.querySelector('#name');
+		const email = document.querySelector('#email');
+		const phone = document.querySelector('#phone');
+		const message = document.querySelector('#message');
 		const send = document.querySelector('#send');
 
 		send.addEventListener('click', function () {
 			const tel = "6282228263933";
-			const text = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
+			const text = `Name: ${name.value}
+			Email: ${email.value}
+			Phone: ${phone.value}
+			Message: ${message.value}`;
 			window.location.href = `https://wa.me/${tel}?text=${text}`;
 		});
 
