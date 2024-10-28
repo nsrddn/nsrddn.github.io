@@ -36,10 +36,8 @@
     animation-range: contain 0 contain 50%;
 }
 
-.width-scroll-animation {
-    animation: width-scroll both;
-    animation-timeline: view();
-    animation-range: contain 0 contain 20%;
+.bars-animate .width-scroll-animation {
+    animation: width-scroll 2s ease;
 }
 
 @keyframes width-scroll {

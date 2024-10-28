@@ -171,6 +171,20 @@
 		const message = document.querySelector('#message');
 		const send = document.querySelector('#send');
 
+		const skill = document.querySelector('#skill');
+
+		window.onscroll = () => {
+			const top = window.scrollY;
+			const offset = skill.offsetTop - 150;
+			const height = skill.offsetHeight;
+
+			if(top >= offset && top < offset + height) {
+				skill.classList.add('bars-animate')
+			}else {
+				skill.classList.remove('bars-animate')
+			}
+		}
+
 		send.addEventListener('click', function () {
 			const tel = "6282228263933";
 			const text = `
