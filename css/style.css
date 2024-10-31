@@ -40,6 +40,16 @@
     animation: width-scroll 2s ease;
 }
 
+.modal-animation {
+    animation: fade 1s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+}
+
 @keyframes width-scroll {
     from {
         width: 0;
