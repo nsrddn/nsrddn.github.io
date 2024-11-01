@@ -119,6 +119,11 @@ aside {
     animation: open-aside .4s ease;
 }
 
+aside > div {
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 12px rgba(255, 255, 255, .1);
+}
+
 @keyframes open-aside {
     from {
         left: -100%;
