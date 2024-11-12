@@ -13,7 +13,7 @@
 
 <body class="h-screen poppins">
 	<nav
-		class="w-full animate__animated animate__fadeInDown h-16 max-[768px]:h-14 bg-gray-800 fixed z-20 top-0 shadow-md text-sm flex justify-center items-center">
+		class="w-full animate__animated animate__fadeInDown h-16 max-[768px]:h-14 bg-gray-800 fixed z-30 top-0 shadow-md text-sm flex justify-center items-center">
 		<ul class="flex max-[768px]:hidden text-gray-400 justify-center items-center gap-8">
 			<li class="hover:underline cursor-pointer"><a href="#home">HOME</a></li>
 			<li class="hover:underline cursor-pointer"><a href="#skill">KNOWLEDGE</a></li>
@@ -22,16 +22,13 @@
 		</ul>
 		<img id="bars" src="svg/list.svg" class="absolute hidden max-[768px]:block left-5" alt="">
 	</nav>
-	<aside class="z-20 h-screen hidden w-1/2 py-4 pl-4 left-0 fixed">
-		<div class="bg-gray-800/70 w-full h-full rounded-md">
-			<img id="close" src="svg/x.svg" class="absolute top-5 right-5" alt="">
-			<ul class="flex flex-col pt-20 px-4 text-xs text-gray-400 justify-center gap-8">
-				<li class="hover:underline cursor-pointer"><a href="#home">HOME</a></li>
-				<li class="hover:underline cursor-pointer"><a href="#skill">KNOWLEDGE</a></li>
-				<li class="hover:underline cursor-pointer"><a href="#portofolio">PORTOFOLIO</a></li>
-				<li class="hover:underline cursor-pointer"><a href="#contact">CONTACT</a></li>
-			</ul>
-		</div>
+	<aside class="z-20 shadow-md h-max hidden bg-gray-800 w-1/2 py-4 top-0 left-0 fixed">
+		<ul class="flex flex-col pt-16 text-sm text-gray-400 items-center justify-center gap-8">
+			<li class="hover:underline cursor-pointer"><a href="#home">HOME</a></li>
+			<li class="hover:underline cursor-pointer"><a href="#skill">KNOWLEDGE</a></li>
+			<li class="hover:underline cursor-pointer"><a href="#portofolio">PORTOFOLIO</a></li>
+			<li class="hover:underline cursor-pointer"><a href="#contact">CONTACT</a></li>
+		</ul>
 	</aside>
 	<main id="home" class="flex bg-gray-800 relative h-full items-center justify-center w-full">
 		<div class="bottom-20 animate__animated animate__fadeInUp flex-col flex justify-center absolute bottom-0 z-10">
@@ -63,36 +60,36 @@
 			<div data-aos="fade-up" data-aos-duration="2000"
 				class="flex text-sm max-[768px]:text-xs font-light max-[768px]:w-full max-[768px]:items-center w-1/2 justify-center text-gray-300">
 				<div class="flex flex-col w-1/6 pl-3 max-[768px]:w-1/3 items-end gap-3">
-					<span>HTML</span>
-					<span>CSS</span>
-					<span>Javascript</span>
-					<span>Next JS</span>
-					<span>PHP</span>
-					<span>Laravel</span>
+					<span><img class="max-[768px]:w-4" src="img/html-5.png" width="20" alt=""></span>
+					<span><img class="max-[768px]:w-4" src="img/css-3.png" width="20" alt=""></span>
+					<span><img class="max-[768px]:w-4" src="img/js.png" width="20" alt=""></span>
+					<span><img class="max-[768px]:w-4" src="svg/nextjs.svg" width="20" alt=""></span>
+					<span><img class="max-[768px]:w-4" src="img/php.png" width="20" alt=""></span>
+					<span><img class="max-[768px]:w-4" src="svg/laravel.svg" width="20" alt=""></span>
 				</div>
 				<div class="flex flex-col w-full px-3 gap-3">
 					<div class="flex items-center gap-3">
-						<p class="h-4 w-3/4 width-scroll-animation rounded-sm bg-green-500"></p>
+						<p class="h-4 w-3/4 width-scroll-animation rounded-sm bg-orange-700"></p>
 						<span>75%</span>
 					</div>
 					<div class="flex items-center gap-3">
-						<p class="h-4 w-2/5 width-scroll-animation rounded-sm bg-green-500"></p>
+						<p class="h-4 w-2/5 width-scroll-animation rounded-sm bg-blue-500"></p>
 						<span>40%</span>
 					</div>
 					<div class="flex items-center gap-3">
-						<p class="h-4 w-1/2 width-scroll-animation rounded-sm bg-green-500"></p>
+						<p class="h-4 w-1/2 width-scroll-animation rounded-sm bg-yellow-400"></p>
 						<span>50%</span>
 					</div>
 					<div class="flex items-center gap-3">
-						<p class="h-4 w-1/3 width-scroll-animation rounded-sm bg-green-500"></p>
+						<p class="h-4 w-1/3 width-scroll-animation rounded-sm bg-gray-800 border border-gray-400"></p>
 						<span>33%</span>
 					</div>
 					<div class="flex items-center gap-3">
-						<p class="h-4 w-1/2 width-scroll-animation rounded-sm bg-green-500"></p>
+						<p style="background-color: #787CB5;" class="h-4 w-1/2 width-scroll-animation rounded-sm"></p>
 						<span>50%</span>
 					</div>
 					<div class="flex items-center gap-3">
-						<p class="h-4 w-1/3 width-scroll-animation rounded-sm bg-green-500"></p>
+						<p class="h-4 w-1/3 width-scroll-animation rounded-sm bg-red-700"></p>
 						<span>33%</span>
 					</div>
 				</div>
@@ -224,18 +221,18 @@
 		const modal = document.querySelector('#modal');
 		const xModal = document.querySelector('#modal > img');
 
-		xModal.addEventListener('click', function() {
+		xModal.addEventListener('click', function () {
 			modal.style.display = 'none';
 		})
 
 		imgPortofolio.forEach(img => {
-			img.addEventListener('click', function() {
+			img.addEventListener('click', function () {
 				modal.style.display = 'flex';
 				document.querySelector('#modalImg').src = img.src;
 				document.querySelector('#modalTitle').textContent = img.title;
 			})
 		});
-		
+
 		window.onscroll = () => {
 			const top = window.scrollY;
 			const offset = skill.offsetTop - 150;
@@ -276,11 +273,13 @@
 		});
 
 		bars.addEventListener('click', function () {
-			aside.style.display = 'block';
-		});
-
-		close.addEventListener('click', function () {
-			aside.style.display = 'none';
+			if(aside.style.display == 'none') {
+				bars.src = 'svg/x.svg';
+				aside.style.display = 'block';
+			}else {
+				bars.src = 'svg/list.svg';
+				aside.style.display = 'none';
+			}
 		});
 	</script>
 </body>

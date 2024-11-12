@@ -116,7 +116,7 @@
 }
 
 aside {
-    animation: open-aside .4s ease;
+    animation: open-aside .5s ease;
 }
 
 aside > div {
@@ -126,7 +126,7 @@ aside > div {
 
 @keyframes open-aside {
     from {
-        left: -100%;
+        top: -100%;
     }
 }
 
