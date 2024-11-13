@@ -3,10 +3,6 @@
     scroll-behavior: smooth;
 }
 
-.poppins {
-    font-family: "Poppins";
-}
-
 .key-animation {
     overflow: hidden;
     animation: key-ani 2s steps(17) alternate infinite, blink .3s infinite;
@@ -65,7 +61,11 @@
 
 @font-face {
     font-family: "Poppins";
-    src: url(../fonts/Poppins/Poppins-Black.ttf);
+    src: url(../fonts/Poppins/Poppins-Thin.ttf);
+}
+
+.poppins {
+    font-family: "Poppins";
 }
 
 .shadow-white {
