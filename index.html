@@ -22,7 +22,7 @@
 		</ul>
 		<img id="bars" src="svg/list.svg" class="absolute hidden max-[768px]:block left-5" alt="">
 	</nav>
-	<aside class="z-20 shadow-md h-max hidden bg-gray-800 w-1/2 py-4 top-0 left-0 fixed">
+	<aside class="z-20 shadow-md h-max rounded-sm hidden bg-gray-800 w-1/2 py-4 top-0 left-0 fixed">
 		<ul class="flex flex-col pt-16 text-sm text-gray-400 items-center justify-center gap-8">
 			<li class="hover:underline cursor-pointer"><a href="#home">HOME</a></li>
 			<li class="hover:underline cursor-pointer"><a href="#skill">KNOWLEDGE</a></li>
@@ -124,46 +124,18 @@
 		</div>
 	</main>
 	<main id="modal"
-		class="fixed hidden top-0 modal-animation max-[768px]:flex-col max-[768px]:gap-4 z-20 p-4 bg-gray-800 left-0 w-full h-screen flex justify-center items-center">
+		class="fixed hidden top-0 modal-animation max-[768px]:flex-col max-[768px]:gap-4 z-30 p-4 bg-gray-800 left-0 w-full h-screen flex justify-center items-center">
 		<img src="svg/x.svg"
 			class="absolute cursor-pointer hover:opacity-80 top-10 max-[768px]:top-5 right-10 max-[768px]:right-5"
 			alt="">
 		<div data-aos="fade-down" data-aos-duration="2000"
 			class="flex justify-center relative items-center max-[768px]:w-full w-1/2 p-20 max-[768px]:p-0 ">
-			<div class="flex items-center w-full max-[768px]:hidden justify-between absolute">
-				<img src="svg/caret-left.svg" alt="">
-				<img src="svg/caret-right.svg" alt="">
-			</div>
 			<img id="modalImg" src="img/kasir.png" class="w-full pt-10" alt="">
 		</div>
 		<div data-aos="fade-down" data-aos-duration="2000"
 			class="flex max-[768px]:p-0 max-[768px]:w-full flex-col justify-center p-8 gap-4 w-1/2">
 			<h2 id="modalTitle" class="text-3xl max-[768px]:text-xl text-white font-extralight">CASHIER APP</h2>
-			<p class="text-sm h-64 font-extralight text-gray-300 max-[768px]:h-64 overflow-scroll max-[768px]:text-xs">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, impedit. Consequatur hic numquam
-				pariatur animi distinctio doloremque quaerat architecto voluptatibus sequi fuga perferendis laborum
-				optio cumque, facilis dolore obcaecati porro magnam ullam quam debitis. Architecto, illo voluptatem iure
-				amet a pariatur. Omnis officiis iusto voluptatibus aperiam vitae. Sint illo cupiditate quam consectetur,
-				debitis a aliquid esse voluptate minima velit veritatis, consequatur dicta odit iure possimus quaerat
-				eius ducimus animi sapiente praesentium ipsum? Cumque qui error fuga dicta nesciunt, sequi voluptates
-				est reiciendis odit velit voluptate ipsam quam incidunt esse maiores, repellendus ab laboriosam officia
-				repudiandae facilis recusandae totam id expedita distinctio. Exercitationem suscipit reiciendis,
-				explicabo neque debitis, odio, impedit cupiditate voluptatum odit officiis repellendus unde error ipsum
-				cumque tempore similique quidem nihil perspiciatis laborum sunt. Fugit ea commodi ipsam quisquam
-				expedita perferendis consectetur, dolores nulla et labore. Illo maiores dolorum reiciendis molestias rem
-				dicta, placeat quisquam dolore quod error iste aperiam fugit voluptatem consequuntur excepturi laborum
-				animi repudiandae iusto quo modi neque. Fuga quasi quaerat velit, atque nostrum quia non animi, impedit
-				repellendus tenetur accusamus, mollitia commodi aliquid similique ut esse quo laudantium tempore vel
-				nihil at. Beatae nulla reprehenderit, repellendus voluptates quisquam harum fuga! Et alias eaque veniam
-				ratione quasi, veritatis iste. Voluptates perferendis nobis reprehenderit accusantium, asperiores
-				libero, possimus laudantium ab optio explicabo beatae ipsa, amet praesentium ex consectetur doloremque
-				necessitatibus cupiditate eos quibusdam corrupti vero! Exercitationem in illum, repudiandae assumenda
-				provident quis facilis eveniet, optio, molestias laudantium ea. Nostrum reprehenderit at hic excepturi
-				laudantium corporis vel aperiam fugit sint dignissimos sunt, velit, temporibus quod quidem quasi labore
-				odit. A nemo voluptatem, sit tempora officia, laborum sunt architecto odit itaque eaque consectetur illo
-				minima. Voluptates rerum adipisci aspernatur, ipsa voluptatibus repudiandae facilis autem atque
-				excepturi officia illo maxime harum nesciunt assumenda consequatur reiciendis. Aliquid reiciendis iusto
-				repudiandae quaerat?</p>
+			<p id="explain" class="text-sm h-64 font-extralight text-gray-300 max-[768px]:h-64 overflow-scroll max-[768px]:text-xs"></p>
 		</div>
 	</main>
 	<main id="contact" class="flex bg-img gradate bg-gray-800 relative h-full items-center z-10 justify-center w-full">
@@ -225,11 +197,24 @@
 			modal.style.display = 'none';
 		})
 
+		const dataPortofolio = [
+			{
+				title: "CASHIER",
+				explain: "Aplikasi cashier berbasis web yang Anda buat adalah sistem untuk mengelola transaksi penjualan di kasir, biasanya digunakan di toko, restoran, atau bisnis lain yang membutuhkan pencatatan transaksi secara efisien. Di sisi frontend, aplikasi ini dibangun menggunakan React untuk memberikan antarmuka pengguna yang responsif dan dinamis. Dengan React, aplikasi ini bisa menampilkan produk, mengelola keranjang belanja, serta memproses transaksi secara real-time.Sisi backend-nya menggunakan Express.js untuk menangani logika bisnis, seperti pemrosesan data transaksi, validasi, serta komunikasi dengan basis data untuk menyimpan catatan penjualan dan inventaris barang. Kombinasi React dan Express.js membuat aplikasi ini ringan, cepat, dan mudah diakses melalui peramban, sehingga membantu kasir dalam memproses transaksi dengan lebih efisien."
+			}, 
+			{
+				title: "REEBLOG",
+				explain: "App blog ini merupakan aplikasi berbasis web yang dibangun menggunakan Laravel sebagai kerangka kerja backend, memanfaatkan kekuatannya dalam pengelolaan data dan routing. Untuk tampilan dan gaya visual, digunakan Tailwind CSS yang memungkinkan pembuatan antarmuka responsif dan modern dengan efisiensi. App ini memungkinkan pengguna untuk membuat, mengelola, dan menampilkan postingan blog secara dinamis dengan desain yang sederhana namun menarik."
+			}
+		]
+
 		imgPortofolio.forEach(img => {
 			img.addEventListener('click', function () {
 				modal.style.display = 'flex';
+				const data = dataPortofolio.find(porto => porto.title == img.title);
 				document.querySelector('#modalImg').src = img.src;
 				document.querySelector('#modalTitle').textContent = img.title;
+				document.querySelector('#explain').textContent = data.explain;
 			})
 		});
 
@@ -262,14 +247,12 @@
 			if (x <= -100) {
 				slideContent.style.transform = `translateX(${x += 100}%)`;
 			}
-			console.log(x)
 		});
 
 		caret[1].addEventListener('click', function () {
 			if (x >= 0) {
 				slideContent.style.transform = `translateX(${x -= 100}%)`;
 			}
-			console.log(x)
 		});
 
 		bars.addEventListener('click', function () {
