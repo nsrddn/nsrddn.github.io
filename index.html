@@ -96,55 +96,19 @@
 			</div>
 		</div>
 	</main>
-	<main id="portofolio" class="flex bg-img bg-gray-800 relative h-full items-center z-10 justify-center w-full">
+	<main id="portofolio"
+		class="flex bg-img bg-gray-800 relative min-h-full py-20 items-center z-10 justify-center w-full">
 		<div class="top-4 flex-col flex w-full relative items-center justify-center gap-4 z-10">
 			<h2 data-aos="fade-down" data-aos-duration="2000" class="text-5xl max-[768px]:text-xl text-white font-bold">
 				MY <span class="text-blue-500">PORTOFOLIO</span></h2>
 			<p data-aos="fade-down" data-aos-duration="2000"
-				class="text-2xl max-[768px]:text-sm text-gray-500 font-light">MY LATEST WORK</p>
-			<div id="caret" data-aos="fade-up" data-aos-duration="2000"
-				class="flex z-10 items-center absolute max-[768px]:hidden right-40 bottom-32 left-40 justify-between">
-				<img width="30" class="cursor-pointer hover:opacity-80" src="svg/caret-left.svg" alt="">
-				<img width="30" class="cursor-pointer hover:opacity-80" src="svg/caret-right.svg" alt="">
-			</div>
-			<div id="portofolioImg" data-aos="fade-up" data-aos-duration="2000" class="overflow-scroll w-full p-4">
-				<div class="flex items-center" id="slideContent">
-					<div class="min-w-full flex justify-center px-4">
-						<img title="CASHIER" src="img/kasir.png"
-							class="max-[768px]:w-full shadow-white rounded-md cursor-pointer hover:opacity-80"
-							width="500" alt="">
-					</div>
-					<div class="min-w-full px-4 flex justify-center">
-						<img title="REEBLOG" src="img/reeblog-homepage.png"
-							class="max-[768px]:w-full shadow-white rounded-md cursor-pointer hover:opacity-80"
-							width="500" alt="">
-					</div>
-					<div class="min-w-full px-4 flex justify-center">
-						<a href="pages/project.html">
-							<div style="width: 500px; height: 250px;" class="max-[768px]:w-full flex justify-center items-center bg-gray-800 text-white text-xl shadow-white rounded-md cursor-pointer hover:opacity-80">
-								+ Other Project
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
+				class="text-2xl max-[768px]:text-sm text-gray-500 font-light">MORE COMING SOON</p>
+			<div id="project" data-aos="fade-up" data-aos-duration="2000"
+				class="w-full items-center justify-center flex-wrap gap-6 flex p-8"></div>
 		</div>
 	</main>
 	<main id="modal"
-		class="fixed hidden top-0 modal-animation max-[768px]:flex-col max-[768px]:gap-4 z-30 p-4 bg-gray-800 left-0 w-full h-screen flex justify-center items-center">
-		<img src="svg/x.svg"
-			class="absolute cursor-pointer hover:opacity-80 top-10 max-[768px]:top-5 right-10 max-[768px]:right-5"
-			alt="">
-		<div data-aos="fade-down" data-aos-duration="2000"
-			class="flex justify-center relative items-center max-[768px]:w-full w-1/2 p-20 max-[768px]:p-0 ">
-			<img id="modalImg" src="img/kasir.png" class="w-full pt-10" alt="">
-		</div>
-		<div data-aos="fade-down" data-aos-duration="2000"
-			class="flex max-[768px]:p-0 max-[768px]:w-full flex-col justify-center p-8 gap-4 w-1/2">
-			<h2 id="modalTitle" class="text-3xl max-[768px]:text-xl text-white font-extralight">CASHIER APP</h2>
-			<p id="explain" class="text-sm h-64 font-extralight text-gray-300 max-[768px]:h-64 overflow-scroll max-[768px]:text-xs"></p>
-		</div>
-	</main>
+		class="fixed top-0 modal-animation hidden max-[768px]:p-0 overflow-scroll py-4 z-30 left-0 w-full h-screen flex justify-center"></main>
 	<main id="contact" class="flex bg-img gradate bg-gray-800 relative h-full items-center z-10 justify-center w-full">
 		<div class="top-4 max-[768px]:flex-col flex w-full items-center justify-center gap-8 z-10">
 			<div data-aos="fade-down" data-aos-duration="2000" class="flex flex-col justify-center items-center">
@@ -179,99 +143,7 @@
 		&copy; 2024 by Nasaruddin
 	</footer>
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-	<script>
-		AOS.init();
-
-		const bars = document.querySelector('#bars');
-		const close = document.querySelector('#close');
-		const aside = document.querySelector('aside');
-
-		const slideContent = document.querySelector('#slideContent');
-		const caret = document.querySelectorAll('#caret img');
-
-		const name = document.querySelector('#name');
-		const email = document.querySelector('#email');
-		const phone = document.querySelector('#phone');
-		const message = document.querySelector('#message');
-		const send = document.querySelector('#send');
-
-		const skill = document.querySelector('#skill');
-		const imgPortofolio = document.querySelectorAll('#portofolio > div #portofolioImg img');
-		const modal = document.querySelector('#modal');
-		const xModal = document.querySelector('#modal > img');
-
-		xModal.addEventListener('click', function () {
-			modal.style.display = 'none';
-		})
-
-		const dataPortofolio = [
-			{
-				title: "CASHIER",
-				explain: "Aplikasi cashier berbasis web yang Anda buat adalah sistem untuk mengelola transaksi penjualan di kasir, biasanya digunakan di toko, restoran, atau bisnis lain yang membutuhkan pencatatan transaksi secara efisien. Di sisi frontend, aplikasi ini dibangun menggunakan React untuk memberikan antarmuka pengguna yang responsif dan dinamis. Dengan React, aplikasi ini bisa menampilkan produk, mengelola keranjang belanja, serta memproses transaksi secara real-time.Sisi backend-nya menggunakan Express.js untuk menangani logika bisnis, seperti pemrosesan data transaksi, validasi, serta komunikasi dengan basis data untuk menyimpan catatan penjualan dan inventaris barang. Kombinasi React dan Express.js membuat aplikasi ini ringan, cepat, dan mudah diakses melalui peramban, sehingga membantu kasir dalam memproses transaksi dengan lebih efisien."
-			}, 
-			{
-				title: "REEBLOG",
-				explain: "App blog ini merupakan aplikasi berbasis web yang dibangun menggunakan Laravel sebagai kerangka kerja backend, memanfaatkan kekuatannya dalam pengelolaan data dan routing. Untuk tampilan dan gaya visual, digunakan Tailwind CSS yang memungkinkan pembuatan antarmuka responsif dan modern dengan efisiensi. App ini memungkinkan pengguna untuk membuat, mengelola, dan menampilkan postingan blog secara dinamis dengan desain yang sederhana namun menarik."
-			}
-		]
-
-		imgPortofolio.forEach(img => {
-			img.addEventListener('click', function () {
-				modal.style.display = 'flex';
-				const data = dataPortofolio.find(porto => porto.title == img.title);
-				document.querySelector('#modalImg').src = img.src;
-				document.querySelector('#modalTitle').textContent = img.title;
-				document.querySelector('#explain').textContent = data.explain;
-			})
-		});
-
-		window.onscroll = () => {
-			const top = window.scrollY;
-			const offset = skill.offsetTop - 150;
-			const height = skill.offsetHeight;
-
-			if (top >= offset && top < offset + height) {
-				skill.classList.add('bars-animate')
-			} else {
-				skill.classList.remove('bars-animate')
-			}
-		}
-
-		send.addEventListener('click', function () {
-			const tel = "6282228263933";
-			const text = `
-			Name: ${name.value}
-			Email: ${email.value}
-			Phone: ${phone.value}
-			Message: ${message.value}
-			`;
-			window.location.href = `https://wa.me/${tel}?text=${text}`;
-		});
-
-		let x = 0;
-
-		caret[0].addEventListener('click', () => {
-			if (x <= -200) {
-				slideContent.style.transform = `translateX(${x += 100}%)`;
-			}
-		});
-
-		caret[1].addEventListener('click', function () {
-			if (x >= -100) {
-				slideContent.style.transform = `translateX(${x -= 100}%)`;
-			}
-		});
-
-		bars.addEventListener('click', function () {
-			if(aside.style.transform == 'scaleY(0)') {
-				bars.src = 'svg/x.svg';
-				aside.style.transform = 'scaleY(1)';
-			}else {
-				bars.src = 'svg/list.svg';
-				aside.style.transform = 'scaleY(0)';
-			}
-		});
-	</script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
