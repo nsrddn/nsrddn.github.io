@@ -6,12 +6,6 @@ const aside = document.querySelector('aside');
 const slideContent = document.querySelector('#slideContent');
 const project = document.querySelector('#project')
 
-const name = document.querySelector('#name');
-const email = document.querySelector('#email');
-const phone = document.querySelector('#phone');
-const message = document.querySelector('#message');
-const send = document.querySelector('#send');
-
 const skill = document.querySelector('#skill');
 const modal = document.querySelector('#modal');
 
@@ -21,23 +15,23 @@ const dataPortofolio = [
         title: "CASHIER",
         category: 'React & ExpressJS',
         img: 'img/kasir.png',
-        explain: "Aplikasi cashier berbasis web yang Anda buat adalah sistem untuk mengelola transaksi penjualan di kasir, biasanya digunakan di toko, restoran, atau bisnis lain yang membutuhkan pencatatan transaksi secara efisien. Di sisi frontend, aplikasi ini dibangun menggunakan React untuk memberikan antarmuka pengguna yang responsif dan dinamis. Dengan React, aplikasi ini bisa menampilkan produk, mengelola keranjang belanja, serta memproses transaksi secara real-time.Sisi backend-nya menggunakan Express.js untuk menangani logika bisnis, seperti pemrosesan data transaksi, validasi, serta komunikasi dengan basis data untuk menyimpan catatan penjualan dan inventaris barang. Kombinasi React dan Express.js membuat aplikasi ini ringan, cepat, dan mudah diakses melalui peramban, sehingga membantu kasir dalam memproses transaksi dengan lebih efisien."
+        explain: "The cashier web application you created is a system designed to manage sales transactions at the cashier, commonly used in stores, restaurants, or other businesses requiring efficient transaction recording. On the frontend, this application is built using React to provide a responsive and dynamic user interface. With React, the app can display products, manage shopping carts, and process transactions in real-time. The backend utilizes Express.js to handle business logic, such as processing transaction data, validation, and communicating with the database to store sales records and inventory items. The combination of React and Express.js makes this application lightweight, fast, and easily accessible through browsers, aiding cashiers in processing transactions more efficiently."
     },
     {
         id: 2,
         title: "REEBLOG",
         category: 'Laravel 10',
         img: 'img/reeblog-homepage.png',
-        explain: "App blog ini merupakan aplikasi berbasis web yang dibangun menggunakan Laravel sebagai kerangka kerja backend, memanfaatkan kekuatannya dalam pengelolaan data dan routing. Untuk tampilan dan gaya visual, digunakan Tailwind CSS yang memungkinkan pembuatan antarmuka responsif dan modern dengan efisiensi. App ini memungkinkan pengguna untuk membuat, mengelola, dan menampilkan postingan blog secara dinamis dengan desain yang sederhana namun menarik."
+        explain: "This blog app is a web-based application built using Laravel as the backend framework, leveraging its strengths in data management and routing. For the visual design and styling, Tailwind CSS is used, enabling the creation of responsive and modern interfaces efficiently. This app allows users to dynamically create, manage, and display blog posts with a simple yet attractive design."
     },
     {
         id: 3,
         title: "The Big News",
         category: "HTML CCS JS",
         img: "img/thebignews.png",
-        explain: "The Big News adalah sebuah website berita yang menyajikan informasi terkini, terpercaya, dan relevan. Dibangun menggunakan teknologi static website, situs ini dirancang untuk memberikan akses informasi yang cepat, ringan, dan mudah diakses di berbagai perangkat tanpa memerlukan backend server atau database. <a href=\"https://nsrddn.github.io/thebignews\" class=\"text-blue-500\">Kunjungi Website</a>"
+        explain: "The Big News is a news website that delivers up-to-date, reliable, and relevant information. Built using static website technology, this site is designed to provide fast, lightweight, and easily accessible information across various devices without requiring a backend server or database. <a href=\"https://nsrddn.github.io/thebignews\" class=\"text-blue-500 hover:underline\">View Website</a>"
     }
-] 
+]
 
 dataPortofolio.forEach(data => {
     const el = `<div class="relative overflow-hidden w-80 h-48 cursor-pointer" alt="">
@@ -52,9 +46,9 @@ dataPortofolio.forEach(data => {
     project.innerHTML += el;
 })
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     console.log(e.target)
-    if(e.target.dataset.id) {
+    if (e.target.dataset.id) {
         const data = dataPortofolio.find(data => data.id == e.target.dataset.id);
         const el = `<div class="bg-gray-800 w-1/2 max-[768px]:w-full h-max rounded-sm">
 			<header class="w-full bg-gray-700 text-white flex items-center justify-between p-4">
@@ -89,17 +83,6 @@ window.onscroll = () => {
     }
 }
 
-send.addEventListener('click', function () {
-    const tel = "6282228263933";
-    const text = `
-			Name: ${name.value}
-			Email: ${email.value}
-			Phone: ${phone.value}
-			Message: ${message.value}
-			`;
-    window.location.href = `https://wa.me/${tel}?text=${text}`;
-});
-
 bars.addEventListener('click', function () {
     if (aside.style.transform == 'scaleY(0)') {
         bars.src = 'svg/x.svg';
@@ -112,4 +95,8 @@ bars.addEventListener('click', function () {
 
 function closeModal() {
     modal.classList.add('hidden');
+}
+
+if(window.innerWidth <= 768) {
+    document.body.classList.remove('poppins');
 }
