@@ -4,6 +4,15 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    cursor: var(--default), auto;
+}
+
+:root {
+    --default: url('../img/cursor.png');
+    --pointer: url('../img/finger.png');
+}
+
 .key-animation {
     overflow: hidden;
     animation: key-ani 2s steps(17) alternate infinite, blink .3s infinite;
@@ -111,7 +120,23 @@ html {
     display: block;
 }
 
-.gradate-div {
+#home .gradate-div {
+    background: linear-gradient(0deg, rgba(31, 41, 55, 1), rgba(255, 255, 255, 0));
+    height: 10%;
+    bottom: 0;
+}
+
+#flashlight {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+}
+
+#skill .gradate-div {
     height: 10%;
     top: 0;
     background: linear-gradient(180deg, rgba(31, 41, 55, 1), rgba(255, 255, 255, 0));
@@ -128,28 +153,36 @@ aside {
     transform-origin: top;
 }
 
+li a, a {
+    cursor: var(--pointer), auto;
+}
+
 aside>div {
     backdrop-filter: blur(10px);
     box-shadow: 0 0 12px rgba(255, 255, 255, .1);
 }
 
-#slideContent {
-    transition: all .8s ease;
-}
-
 #project div>div {
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    top: 0;
-    animation: overlay .5s ease;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all .3s ease;
 }
 
-@keyframes overlay {
-    from {
-        opacity: 0;
-    }
+#project div:hover > p {
+    transform: none;
+    transition: all .3s ease;
+    cursor: var(--pointer), auto !important;
+}
+
+#project div > p {
+    transition: all .3s ease;
+    transform: translateY(100%);
 }
 
 #project div:hover>div {
-    display: flex;
+    cursor: var(--pointer), auto !important;
+    transform: none;
+    opacity: 1;
+    transition: all .3s ease;
 }

@@ -9,6 +9,8 @@ const project = document.querySelector('#project')
 const skill = document.querySelector('#skill');
 const modal = document.querySelector('#modal');
 
+const flashlight = document.querySelector('#flashlight');
+
 const dataPortofolio = [
     {
         id: 1,
@@ -29,19 +31,19 @@ const dataPortofolio = [
         title: "The Big News",
         category: "HTML CCS JS",
         img: "img/thebignews.png",
-        explain: "The Big News is a news website that delivers up-to-date, reliable, and relevant information. Built using static website technology, this site is designed to provide fast, lightweight, and easily accessible information across various devices without requiring a backend server or database. <a href=\"https://nsrddn.github.io/thebignews\" class=\"text-blue-500 hover:underline\">View Website</a>"
+        explain: "The Big News is a news website that delivers up-to-date, reliable, and relevant information. Built using static website technology, this site is designed to provide fast, lightweight, and easily accessible information across various devices without requiring a backend server or database. <a href=\"https://nsrddn.github.io/thebignews\" target=\"_blank\" class=\"text-blue-500 hover:underline\">View Website</a>"
     }
 ]
 
 dataPortofolio.forEach(data => {
     const el = `<div class="relative overflow-hidden w-80 h-48 cursor-pointer" alt="">
-					<div data-id="${data.id}" class="absolute w-full flex items-center justify-center h-full">
+					<div data-id="${data.id}" class="absolute max-[768px]:hidden w-full flex-col flex items-center justify-center h-full">
 						<img data-id="${data.id}" src="svg/search.svg" class="w-10" alt="">
-						<p class="bg-blue-500 text-center bottom-0 text-white py-2 text-sm absolute w-full">
-							${data.title}
-						</p>
-					</div>
-					<img src="${data.img}" class="w-full h-full" alt="">
+                    </div>
+					<p class="bg-blue-500 max-[768px]:hidden text-center bottom-0 absolute text-white py-2 text-sm w-full">
+						${data.title}
+					</p>
+					<img src="${data.img}" data-id="${data.id}" class="w-full h-full" alt="">
 				</div>`;
     project.innerHTML += el;
 })
@@ -97,6 +99,14 @@ function closeModal() {
     modal.classList.add('hidden');
 }
 
-if(window.innerWidth <= 768) {
+if (window.innerWidth <= 768) {
     document.body.classList.remove('poppins');
+}
+
+document.body.onpointermove = e => {
+    const { clientX, clientY } = e;
+    flashlight.animate({
+        top: `${clientY}px`,
+        left: `${clientX}px`
+    }, { duration: 1000, fill: 'forwards' });
 }

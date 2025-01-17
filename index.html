@@ -13,26 +13,27 @@
 </head>
 
 <body class="h-screen poppins">
+	<div id="flashlight" class="z-40 pointer-events-none max-[768px]:hidden fixed"></div>
 	<nav
 		class="w-full animate__animated animate__fadeInDown h-16 max-[768px]:h-14 bg-gray-800 fixed z-30 top-0 text-sm flex justify-center items-center">
 		<ul class="flex max-[768px]:hidden text-gray-400 justify-center items-center gap-8">
-			<li class="hover:underline cursor-pointer"><a href="#home">Home</a></li>
-			<li class="hover:underline cursor-pointer"><a href="#about">About Me</a></li>
-			<li class="hover:underline cursor-pointer"><a href="#skill">Knowledge</a></li>
-			<li class="hover:underline cursor-pointer"><a href="#portofolio">Portofolio</a></li>
+			<li class="hover:underline"><a href="#home">Home</a></li>
+			<li class="hover:underline"><a href="#about">About Me</a></li>
+			<li class="hover:underline"><a href="#skill">Knowledge</a></li>
+			<li class="hover:underline"><a href="#portofolio">Portofolio</a></li>
 		</ul>
 		<img id="bars" src="svg/list.svg" class="absolute hidden max-[768px]:block left-5" alt="">
 	</nav>
 	<aside class="z-20 overflow-hidden h-max rounded-md bg-gray-700 w-1/2 top-16 left-0 fixed">
 		<ul class="flex flex-col text-sm text-gray-400 items-center justify-center">
-			<li class="hover:underline py-2 cursor-pointer"><a href="#home">Home</a></li>
-			<li class="hover:underline py-2 cursor-pointer"><a href="#about">About Me</a></li>
-			<li class="hover:underline py-2 cursor-pointer"><a href="#skill">Knowledge</a></li>
-			<li class="hover:underline py-2 cursor-pointer"><a href="#portofolio">Portofolio</a></li>
+			<li class="hover:underline py-2"><a href="#home">Home</a></li>
+			<li class="hover:underline py-2"><a href="#about">About Me</a></li>
+			<li class="hover:underline py-2"><a href="#skill">Knowledge</a></li>
+			<li class="hover:underline py-2"><a href="#portofolio">Portofolio</a></li>
 		</ul>
 	</aside>
 	<main id="home" class="flex bg-gray-800 relative h-full items-center justify-center w-full">
-		<div class="bottom-20 animate__animated animate__fadeInUp flex-col flex justify-center absolute bottom-0 z-10">
+		<div class="bottom-20 animate__animated animate__fadeInUp flex-col flex justify-center absolute z-10">
 			<h2 class="text-8xl max-[768px]:text-4xl text-gray-300 font-bold poppins">Nasaruddin</h2>
 			<p id="who" class="text-xl max-[768px]:text-sm text-gray-300 font-bold w-max">
 				<span class="key-animation block pr-5">
@@ -50,9 +51,9 @@
 			</ul>
 		</div>
 		<img src="img/Deadpool.png" class="fixed opacity-60 drop-shadow-white bottom-0" alt="">
+		<div class="absolute z-10 gradate-div w-full"></div>
 	</main>
 	<main id="about" class="flex bg-img bg-gray-800 relative min-h-full py-20 items-center z-10 justify-center w-full">
-		<div class="absolute gradate-div w-full"></div>
 		<div class="top-4 flex-col flex w-full relative items-center justify-center gap-4 z-10">
 			<h2 data-aos="fade-down" data-aos-duration="2000" class="poppins text-5xl max-[768px]:text-xl text-white font-bold">
 				About <span class="text-blue-500">Me</span></h2>
