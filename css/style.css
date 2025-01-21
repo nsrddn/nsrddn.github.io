@@ -6,6 +6,7 @@ html {
 
 body {
     cursor: var(--default), auto;
+    font-family: "Poppins";
 }
 
 :root {
@@ -68,15 +69,6 @@ body {
         opacity: .3;
         transform: translateY(5vh);
     }
-}
-
-@font-face {
-    font-family: "Poppins";
-    src: url(../fonts/Poppins/Poppins-Black.ttf);
-}
-
-.poppins {
-    font-family: "Poppins";
 }
 
 .shadow-white {
