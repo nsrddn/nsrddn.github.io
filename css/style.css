@@ -121,11 +121,11 @@ body {
 #flashlight {
     width: 200px;
     height: 200px;
-    background-color: rgba(255, 255, 255, .1);
     border-radius: 50%;
     left: 50%;
     top: 50%;
     transform: translateX(-50%);
+    mix-blend-mode: difference;
 }
 
 #skill .gradate-div {
