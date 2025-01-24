@@ -119,7 +119,9 @@ document.body.onpointerleave = () => {
 }
 
 window.addEventListener('load', function () {
-    preload.style.display = 'none';
+    preload.animate({
+        opacity: 0
+    }, {duration: 500, fill: 'forwards'});
 })
 
 let typed = new Typed('.key-animation', {
@@ -129,18 +131,3 @@ let typed = new Typed('.key-animation', {
     smartBackspace: true,
     loop: true
 });
-
-// Key Animation
-// function changeWho() {
-//     who.textContent = "Web Developer";
-    
-//     setTimeout(() => {
-//         who.textContent = "Student";
-//     }, 4000);
-
-//     setTimeout(() => {
-//         who.textContent = "Unemployment";
-//     }, 8000);
-// }
-// changeWho();
-// setInterval(changeWho, 12000);
