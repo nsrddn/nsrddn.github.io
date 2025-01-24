@@ -11,6 +11,9 @@ const modal = document.querySelector('#modal');
 
 const flashlight = document.querySelector('#flashlight');
 
+const preload = document.querySelector('.preload');
+const who = document.querySelector('#who > span');
+
 const dataPortofolio = [
     {
         id: 1,
@@ -36,11 +39,11 @@ const dataPortofolio = [
 ]
 
 dataPortofolio.forEach(data => {
-    const el = `<div class="relative overflow-hidden w-80 h-48 cursor-pointer" alt="">
+    const el = `<div class="relative overflow-hidden w-80 h-48" alt="">
 					<div data-id="${data.id}" class="absolute max-[768px]:hidden w-full flex-col flex items-center justify-center h-full">
-						<img data-id="${data.id}" src="svg/search.svg" class="w-10" alt="">
+                        <i data-id="${data.id}" class="fa-solid text-xl text-white fa-magnifying-glass"></i> 
                     </div>
-					<p class="bg-blue-500 max-[768px]:hidden text-center bottom-0 absolute text-white py-2 text-sm w-full">
+					<p class="bg-blue-800 max-[768px]:hidden text-center bottom-0 absolute text-white py-2 text-sm w-full">
 						${data.title}
 					</p>
 					<img src="${data.img}" data-id="${data.id}" class="w-full h-full" alt="">
@@ -49,23 +52,22 @@ dataPortofolio.forEach(data => {
 })
 
 document.addEventListener('click', function (e) {
-    console.log(e.target)
     if (e.target.dataset.id) {
         const data = dataPortofolio.find(data => data.id == e.target.dataset.id);
-        const el = `<div class="bg-gray-800 w-1/2 max-[768px]:w-full h-max rounded-sm">
-			<header class="w-full bg-gray-700 text-white flex items-center justify-between p-4">
+        const el = `<div class="bg-white w-1/2 max-[768px]:w-full h-max rounded-sm">
+			<header class="w-full bg-gray-200 flex items-center justify-between p-4">
 				<div class="w-full font-normal flex flex-col items-center justify-center">
-					<h2 class="text-xl">${data.title}</h2>
+					<h2 class="text-xl text-gray-800">${data.title}</h2>
 					<p class="text-gray-500">${data.category}</p>
 				</div>
-				<img width="30" onclick="closeModal()" class="cursor-pointer hover:opacity-80" src="svg/x.svg" alt="">
+                <i onclick="closeModal()" class="fa-solid fa-circle-xmark text-2xl pr-3"></i>
 			</header>
 			<div class="p-4 w-full flex flex-col gap-4">
 				<img src="${data.img}" alt="">
-				<p class="text-sm text-gray-500" >${data.explain}</p>
+				<p class="text-sm text-gray-800" >${data.explain}</p>
 			</div>
-			<footer class="border-t w-full p-4 border-gray-700 flex justify-end items-center">
-				<button onclick="closeModal()" class="bg-gray-700 px-4 py-2 text-white hover:opacity-80">Close</button>
+			<footer class="border-t w-full p-4 border-gray-200 flex justify-end items-center">
+				<button onclick="closeModal()" class="bg-gray-800 cursor-none px-4 py-2 text-white hover:opacity-80">Close</button>
 			</footer>
 		</div>`;
         modal.innerHTML = el;
@@ -86,12 +88,12 @@ window.onscroll = () => {
 }
 
 bars.addEventListener('click', function () {
-    if (aside.style.transform == 'scaleY(0)') {
-        bars.src = 'svg/x.svg';
-        aside.style.transform = 'scaleY(1)';
+    if (aside.style.transform == 'scaleX(0)') {
+        bars.classList.replace('fa-bars-staggered', 'fa-x');
+        aside.style.transform = 'scaleX(1)';
     } else {
-        bars.src = 'svg/list.svg';
-        aside.style.transform = 'scaleY(0)';
+        bars.classList.replace('fa-x', 'fa-bars-staggered');
+        aside.style.transform = 'scaleX(0)';
     }
 });
 
@@ -105,8 +107,40 @@ if (window.innerWidth <= 768) {
 
 document.body.onpointermove = e => {
     const { clientX, clientY } = e;
+    flashlight.style.display = 'block';
     flashlight.animate({
-        top: `${clientY}px`,
+        top: `${clientY - 10}px`,
         left: `${clientX}px`
-    }, { duration: 1000, fill: 'forwards' });
+    }, { duration: 0, fill: 'forwards' });
 }
+
+document.body.onpointerleave = () => {
+    flashlight.style.display = 'none';
+}
+
+window.addEventListener('load', function () {
+    preload.style.display = 'none';
+})
+
+let typed = new Typed('.key-animation', {
+    strings: ["Web Developer", "Student", "Unemployment"],
+    typeSpeed: 70,
+    backSpeed: 70,
+    smartBackspace: true,
+    loop: true
+});
+
+// Key Animation
+// function changeWho() {
+//     who.textContent = "Web Developer";
+    
+//     setTimeout(() => {
+//         who.textContent = "Student";
+//     }, 4000);
+
+//     setTimeout(() => {
+//         who.textContent = "Unemployment";
+//     }, 8000);
+// }
+// changeWho();
+// setInterval(changeWho, 12000);
