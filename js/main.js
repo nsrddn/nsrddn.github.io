@@ -1,12 +1,11 @@
 AOS.init();
 const bars = document.querySelector('#bars');
 const close = document.querySelector('#close');
-const aside = document.querySelector('aside');
+const checkbox = document.querySelector('#checkbox');
 
 const slideContent = document.querySelector('#slideContent');
 const project = document.querySelector('#project')
 
-const skill = document.querySelector('#skill');
 const modal = document.querySelector('#modal');
 
 const flashlight = document.querySelector('#flashlight');
@@ -72,28 +71,17 @@ document.addEventListener('click', function (e) {
 		</div>`;
         modal.innerHTML = el;
         modal.classList.remove('hidden');
+    }else if(e.target.classList.contains('link')) {
+        checkbox.checked = !checkbox.checked;
+        bars.classList.replace('fa-x', 'fa-bars-staggered');
     }
 })
 
-window.onscroll = () => {
-    const top = window.scrollY;
-    const offset = skill.offsetTop - 150;
-    const height = skill.offsetHeight;
-
-    if (top >= offset && top < offset + height) {
-        skill.classList.add('bars-animate')
-    } else {
-        skill.classList.remove('bars-animate')
-    }
-}
-
-bars.addEventListener('click', function () {
-    if (aside.style.transform == 'scaleX(0)') {
+checkbox.addEventListener('change', function () {
+    if (this.checked) {
         bars.classList.replace('fa-bars-staggered', 'fa-x');
-        aside.style.transform = 'scaleX(1)';
     } else {
         bars.classList.replace('fa-x', 'fa-bars-staggered');
-        aside.style.transform = 'scaleX(0)';
     }
 });
 
