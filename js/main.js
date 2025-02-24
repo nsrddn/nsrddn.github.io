@@ -1,17 +1,16 @@
-AOS.init();
 const bars = document.querySelector('#bars');
-const close = document.querySelector('#close');
-const checkbox = document.querySelector('#checkbox');
+// const close = document.querySelector('#close');
+const checkbox = document.querySelector('.navigation__checkbox');
 
-const slideContent = document.querySelector('#slideContent');
-const project = document.querySelector('#project')
+// const slideContent = document.querySelector('#slideContent');
+const project = document.querySelector('.portofolio__project')
 
-const modal = document.querySelector('#modal');
+const modal = document.querySelector('.modal');
 
-const flashlight = document.querySelector('#flashlight');
+const circle = document.querySelector('.circle');
 
-const preload = document.querySelector('.preload');
-const who = document.querySelector('#who > span');
+// const preload = document.querySelector('.preload');
+// const who = document.querySelector('#who > span');
 
 const dataPortofolio = [
     {
@@ -38,14 +37,14 @@ const dataPortofolio = [
 ]
 
 dataPortofolio.forEach(data => {
-    const el = `<div class="relative overflow-hidden w-80 h-48" alt="">
-					<div data-id="${data.id}" class="absolute max-[768px]:hidden w-full flex-col flex items-center justify-center h-full">
-                        <i data-id="${data.id}" class="fa-solid text-xl text-white fa-magnifying-glass"></i> 
+    const el = `<div data-id="${data.id}" class="project" alt="">
+					<div class="project__background">
+                        <i class="project__icon fa-solid fa-magnifying-glass"></i> 
                     </div>
-					<p class="bg-blue-800 max-[768px]:hidden text-center bottom-0 absolute text-white py-2 text-sm w-full">
+					<p class="project__title">
 						${data.title}
 					</p>
-					<img src="${data.img}" data-id="${data.id}" class="w-full h-full" alt="">
+					<img src="${data.img}" class="project__image" alt="">
 				</div>`;
     project.innerHTML += el;
 })
@@ -53,27 +52,28 @@ dataPortofolio.forEach(data => {
 document.addEventListener('click', function (e) {
     if (e.target.dataset.id) {
         const data = dataPortofolio.find(data => data.id == e.target.dataset.id);
-        const el = `<div class="bg-white w-1/2 max-[768px]:w-full h-max rounded-sm">
-			<header class="w-full bg-gray-200 flex items-center justify-between p-4">
-				<div class="w-full font-normal flex flex-col items-center justify-center">
-					<h2 class="text-xl text-gray-800">${data.title}</h2>
-					<p class="text-gray-500">${data.category}</p>
+        const el = `<div class="modal__content">
+			<header class="modal__header">
+				<div class="modal__title">
+					<h2 class="">${data.title}</h2>
+					<p class="">${data.category}</p>
 				</div>
-                <i onclick="closeModal()" class="fa-solid fa-circle-xmark text-2xl pr-3"></i>
+                <i onclick="closeModal()" class="modal__close fa-solid fa-x"></i>
 			</header>
-			<div class="p-4 w-full flex flex-col gap-4">
-				<img src="${data.img}" alt="">
-				<p class="text-sm text-gray-800" >${data.explain}</p>
+			<div class="modal__body">
+				<img src="${data.img}" class="modal__image" alt="">
+				<p class="modal__text" >${data.explain}</p>
 			</div>
-			<footer class="border-t w-full p-4 border-gray-200 flex justify-end items-center">
-				<button onclick="closeModal()" class="bg-gray-800 cursor-none px-4 py-2 text-white hover:opacity-80">Close</button>
+			<footer class="modal__footer">
+				<button onclick="closeModal()" class="modal__btn">Close</button>
 			</footer>
 		</div>`;
         modal.innerHTML = el;
-        modal.classList.remove('hidden');
-    }else if(e.target.classList.contains('link')) {
+        modal.style.display = 'grid';
+    }else if(e.target.classList.contains('navigation__link')) {
         checkbox.checked = !checkbox.checked;
         bars.classList.replace('fa-x', 'fa-bars-staggered');
+        modal.style.display = 'none';
     }
 })
 
@@ -86,33 +86,29 @@ checkbox.addEventListener('change', function () {
 });
 
 function closeModal() {
-    modal.classList.add('hidden');
-}
-
-if (window.innerWidth <= 768) {
-    document.body.classList.remove('poppins');
+    modal.style.display = 'none';
 }
 
 document.body.onpointermove = e => {
     const { clientX, clientY } = e;
-    flashlight.style.display = 'block';
-    flashlight.animate({
+    circle.style.display = 'block';
+    circle.animate({
         top: `${clientY - 10}px`,
-        left: `${clientX}px`
+        left: `${clientX - 10}px`
     }, { duration: 0, fill: 'forwards' });
 }
 
 document.body.onpointerleave = () => {
-    flashlight.style.display = 'none';
+    circle.style.display = 'none';
 }
 
-window.addEventListener('load', function () {
-    preload.animate({
-        opacity: 0
-    }, {duration: 500, fill: 'forwards'});
-})
+// window.addEventListener('load', function () {
+//     preload.animate({
+//         opacity: 0
+//     }, {duration: 500, fill: 'forwards'});
+// })
 
-let typed = new Typed('.key-animation', {
+let typed = new Typed('.home__ido', {
     strings: ["Web Developer", "Student", "Unemployment"],
     typeSpeed: 70,
     backSpeed: 70,
